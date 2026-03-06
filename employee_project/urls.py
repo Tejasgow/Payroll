@@ -1,22 +1,18 @@
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
-
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    
-    # Auth Endpoints
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path("admin/", admin.site.urls),
+
+    # JWT
+    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     
     # App Endpoints
     path('api/accounts/', include('app.accounts.urls')),
     path('api/companies/', include('app.companies.urls')),
     path('api/employees/', include('app.employees.urls')),
-    path('api/payroll/', include('app.pay_roll.urls')),
+    path('api/salary/', include('app.salary.urls')),
     path('api/organization/', include('app.organization.urls')),
     path('api/leaves/', include('app.leave_management.urls')),
     path('api/attendance/', include('app.attendance_app.urls')),

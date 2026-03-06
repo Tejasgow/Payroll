@@ -1,9 +1,6 @@
-from django.db import models
-
 import uuid
 from django.db import models
 from django.core.exceptions import ValidationError
-
 
 class SalaryStructure(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -128,11 +125,6 @@ class PayrollFormula(models.Model):
 
     def __str__(self):
         return self.name
-
-# Create your models here.
-import uuid
-from django.db import models
-from django.core.exceptions import ValidationError
 
 
 class SalaryStructureComponentMapping(models.Model):
