@@ -7,7 +7,7 @@ from rest_framework import status
 from django.db.models import Sum, Count, Q
 
 from attendance.models import Attendance
-from payroll.models import Payroll
+from pay_roll.models import Payroll
 from leave_management.models import Leave
 
 # 1️⃣ Attendance Summary API
